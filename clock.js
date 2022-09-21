@@ -1,5 +1,5 @@
-    function startbuttonClick()
-    function stopbuttonClick()
+    // function startbuttonClick()
+    // function stopbuttonClick()
     
     function runtimer (x){
 
