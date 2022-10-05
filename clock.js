@@ -21,7 +21,7 @@
                     currTime = currTime - 5
                     y.innerHTML += "currTime Reduced<br>"
                 }
-                if (currTime == 0){
+                if (currTime == -5){
                     alert('Blast Off!!');
                     y.innerHTML += "LaunchAlert<br>"
                 }
