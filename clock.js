@@ -1,5 +1,11 @@
-        // function startbuttonClick()
-    // function stopbuttonClick()
+    function startbuttonClick(){
+        document.getElementById("btnStart").disabled = true;
+        document.getElementById("btnStop").disabled = false;
+    }
+    function stopbuttonClick(){
+        document.getElementById("btnStop").disabled = true;
+        document.getElementById("btnStart").disabled = false;
+    }
     
     function enterName (namefeed){ //Alerts user to input name & ID.
         var nameStorageAll = "Debug"
