@@ -5,8 +5,8 @@
 	<script src="clock.js"></script>
     </head>
     <body>
-        <h1>Preparing to launch...</h1>
-        <p>Countdown: <span id="DisplayCountdown">Ready for takeoff</span><p>
+        <h1 id="title">Preparing to launch...</h1>
+        <p>Countdown: <span id="DisplayCountdown">READY FOR TAKEOFF</span><p>
 	<img src="https://tse2.mm.bing.net/th?id=OIP.m8GRYE7-C2KJl0pq_iLbpQHaEK&pid=Api"></img>
     <p id="name">LOGIN REQUIRED</p>
         <br><input type="button" id="btnStart" value="Start" onclick="startbuttonClick();">
@@ -16,11 +16,14 @@
     <p id="feed"></p>
 </html>
 
-<script>    
+<script>
+// For some reason, the buttons occasionally start in incorrect disabled states. This fixes that if it occurs.
+document.getElementById("btnStop").disabled = true; //Disables stop button.
+document.getElementById("btnStart").disabled = false; //Enables start button.
 let x = document.getElementById("DisplayCountdown");
 var y = document.getElementById("feed");
 var namefeed = document.getElementById("name")
-enterName(namefeed)
-//runtimer(x,y);
+enterName(namefeed) //Asks for name.
+
 
 </script>
