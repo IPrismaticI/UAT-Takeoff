@@ -3,18 +3,143 @@
     <head>
         <title>FlightOfTheValkries.mp3</title>
 	<script src="clock.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            background: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        span{
+            text-align: left;
+            float: left;
+            color: greenyellow;
+        }
+        table, th, td{
+            text-align: center;
+            border: 1px solid rgb(204, 204, 204);
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        td{
+            color: greenyellow;
+        }
+    </style>
     </head>
     <body>
+        <a href="index.html">Back to Index</a><a> </a><a href="innawoods.html">innawoods</a><a> </a><a href="bio.html">bio</a><a> </a><a href="https://www.eelslap.com">Eel Slap (very important)</a><br>
         <audio controls><source src="us-lab-background.mp3" type="audio/mpeg"></audio>
         <h1 id="title">Preparing to launch...</h1>
-        <p>Countdown: <span id="DisplayCountdown">READY FOR TAKEOFF</span><p>
-	<img src="https://tse2.mm.bing.net/th?id=OIP.m8GRYE7-C2KJl0pq_iLbpQHaEK&pid=Api"></img>
-    <p id="name">LOGIN REQUIRED</p>
+        <p id="DisplayCountdown">READY FOR TAKEOFF</p>
+	<img src="UAT_Space.jpg"></img>&nbsp<img src="https://tse2.mm.bing.net/th?id=OIP.m8GRYE7-C2KJl0pq_iLbpQHaEK&pid=Api"></img>
+    <p id="name"></p>
+    <table id="table1">
+        <thead>
+            <th>Data Type</th>
+            <th>Reading</th>
+        </thead>
+        <tbody>
+            <tr id="tabletileUN">
+                <td>Name:</td>
+                <td id="username">NULL</td>
+            </tr>
+            <tr id="tabletileID">
+                <td>User ID:</td>
+                <td id="identifier">NULL</td>
+            </tr>
+            <tr id="tabletile0">
+                <td>Time elapsed:</td>
+                <td id="timeElapsed"></td>
+            </tr>
+            <tr id="tabletile1">
+                <td>Latitude:</td>
+                <td>0</td>
+            </tr>
+            <tr id="tabletile2">
+                <td>Longitude:</td>
+                <td>0</td>
+            </tr>
+            <tr id="tabletile3">
+                <td>GPS Altitude:</td>
+                <td>0</td>
+            </tr>
+            <tr id="tabletile4">
+                <td>BMP Sensor Altitude:</td>
+                <td>30383.04</td>
+            </tr>
+            <tr id="tabletile5">
+                <td>BMP Sensor Pressure:</td>
+                <td>2.34</td>
+            </tr>
+            <tr id="tabletile6">
+                <td>BMP Sensor Temperature:</td>
+                <td>0</td>
+            </tr>
+            <tr id="tabletile7">
+                <td>Digital Sensor Temperature:</td>
+                <td>24</td>
+            </tr>
+            <tr id="tabletile8">
+                <td>CSS Sensor Temperature:</td>
+                <td>32.48</td>
+            </tr>
+            <tr id="tabletile9">
+                <td>CSS Sensor eCO2:</td>
+                <td>422</td>
+            </tr>
+            <tr id="tabletile10">
+                <td>CSS Sensor TVOC:</td>
+                <td>3</td>
+            </tr>
+            <tr id="tabletile11">
+                <td>UV:</td>
+                <td>6</td>
+            </tr>
+            <tr id="tabletile12">
+                <td>Accel X:</td>
+                <td>-0.75</td>
+            </tr>
+            <tr id="tabletile13">
+                <td>Accel Y:</td>
+                <td>-0.77</td>
+            </tr>
+            <tr id="tabletile14">
+                <td>Accel Z:</td>
+                <td>9.35</td>
+            </tr>
+            <tr id="tabletile15">
+                <td>Magnetic X:</td>
+                <td>-0.08</td>
+            </tr>
+            <tr id="tabletile16">
+                <td>Magnetic Y:</td>
+                <td>0.36</td>
+            </tr>
+            <tr id="tabletile17">
+                <td>Magnetic Z:</td>
+                <td>-0.53</td>
+            </tr>
+            <tr id="tabletile18">
+                <td>Gyro X:</td>
+                <td>4.44</td>
+            </tr>
+            <tr id="tabletile19">
+                <td>Gyro Y:</td>
+                <td>-0.95</td>
+            </tr>
+            <tr id="tabletile20">
+                <td>Gyro Z:</td>
+                <td>1.72</td>
+            </tr>
+        </tbody>
+    </table>
         <br><input type="button" id="btnStart" value="Start" onclick="startbuttonClick();">
-        <br><input type="button" id="btnStop" value="Stop" disabled="true" onclick="stopbuttonClick();">
+        <input type="button" id="btnStop" value="Stop" disabled="true" onclick="stopbuttonClick();">
         <br><button id="btnAlert" onclick="alert('Please do not click me.');"> Don't Click Me</button>
     </body>
-    <p id="feed"></p>
+    <br><span id="feed"></span>
 </html>
 
 <script>
@@ -25,6 +150,7 @@ let x = document.getElementById("DisplayCountdown");
 var y = document.getElementById("feed");
 var namefeed = document.getElementById("name")
 enterName(namefeed) //Asks for name.
-
+clock()
+var timeStorage = 0
+elapser()
 </script>
-

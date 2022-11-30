@@ -1,0 +1,1675 @@
+<!doctype html>
+<html>
+    <head>
+        <title>innawoods Indev</title>
+        <script src="inv.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box;
+                background: black;
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            header {
+                float: left;
+                width: 50%;
+                height: 80%;
+            }
+
+            span {
+                display: inline-block;
+                font-size: 32px;
+                transform: scale(1, .75);
+                line-height: 0.5;
+            }
+
+            nav {
+                float: left;
+                width: 50%;
+                height: 40%;
+            }
+            article {
+                float: left;
+                width: 50%;
+                height: 40%;
+            }
+
+            section {
+                width: 100%;
+                height: 20%;
+                clear: both;
+                color: gray;
+            }
+            
+            /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+            @media (max-width: 600px) {
+              nav, article {
+                width: 100%;
+                height: auto;
+              }
+            }
+        </style>
+    </head>
+    <header>
+        <h1 id="area" value="000">Innawoods Indev</h1>
+        <!-- Map : 0,0 is center -->
+        <span id="map-1010c">.</span><span id="map-910c">.</span><span id="map-810c">.</span><span id="map-710c">.</span><span id="map-610c">.</span><span id="map-510c">.</span><span id="map-410c">.</span><span id="map-310c">.</span><span id="map-210c">.</span><span id="map-110c">.</span><span id="map010c">.</span><span id="map110c">.</span><span id="map210c">.</span><span id="map310c">.</span><span id="map410c">.</span><span id="map510c">.</span><span id="map610c">.</span><span id="map710c">.</span><span id="map810c">.</span><span id="map910c">.</span><span id="map1010c">.</span><br>
+        <span id="map-109c">.</span><span id="map-99c">.</span><span id="map-89c">.</span><span id="map-79c">.</span><span id="map-69c">.</span><span id="map-59c">.</span><span id="map-49c">.</span><span id="map-39c">.</span><span id="map-29c">.</span><span id="map-19c">.</span><span id="map09c">.</span><span id="map19c">.</span><span id="map29c">.</span><span id="map39c">.</span><span id="map49c">.</span><span id="map59c">.</span><span id="map69c">.</span><span id="map79c">.</span><span id="map89c">.</span><span id="map99c">.</span><span id="map109c">.</span><br>
+        <span id="map-108c">.</span><span id="map-98c">.</span><span id="map-88c">.</span><span id="map-78c">.</span><span id="map-68c">.</span><span id="map-58c">.</span><span id="map-48c">.</span><span id="map-38c">.</span><span id="map-28c">.</span><span id="map-18c">.</span><span id="map08c">.</span><span id="map18c">.</span><span id="map28c">.</span><span id="map38c">.</span><span id="map48c">.</span><span id="map58c">.</span><span id="map68c">.</span><span id="map78c">.</span><span id="map88c">.</span><span id="map98c">.</span><span id="map108c">.</span><br>
+        <span id="map-107c">.</span><span id="map-97c">.</span><span id="map-87c">.</span><span id="map-77c">.</span><span id="map-67c">.</span><span id="map-57c">.</span><span id="map-47c">.</span><span id="map-37c">.</span><span id="map-27c">.</span><span id="map-17c">.</span><span id="map07c">.</span><span id="map17c">.</span><span id="map27c">.</span><span id="map37c">.</span><span id="map47c">.</span><span id="map57c">.</span><span id="map67c">.</span><span id="map77c">.</span><span id="map87c">.</span><span id="map97c">.</span><span id="map107c">.</span><br>
+        <span id="map-106c">.</span><span id="map-96c">.</span><span id="map-86c">.</span><span id="map-76c">.</span><span id="map-66c">.</span><span id="map-56c">.</span><span id="map-46c">.</span><span id="map-36c">.</span><span id="map-26c">.</span><span id="map-16c">.</span><span id="map06c">.</span><span id="map16c">.</span><span id="map26c">.</span><span id="map36c">.</span><span id="map46c">.</span><span id="map56c">.</span><span id="map66c">.</span><span id="map76c">.</span><span id="map86c">.</span><span id="map96c">.</span><span id="map106c">.</span><br>
+        <span id="map-105c">.</span><span id="map-95c">.</span><span id="map-85c">.</span><span id="map-75c">.</span><span id="map-65c">.</span><span id="map-55c">.</span><span id="map-45c">.</span><span id="map-35c">.</span><span id="map-25c">.</span><span id="map-15c">.</span><span id="map05c">.</span><span id="map15c">.</span><span id="map25c">.</span><span id="map35c">.</span><span id="map45c">.</span><span id="map55c">.</span><span id="map65c">.</span><span id="map75c">.</span><span id="map85c">.</span><span id="map95c">.</span><span id="map105c">.</span><br>
+        <span id="map-104c">.</span><span id="map-94c">.</span><span id="map-84c">.</span><span id="map-74c">.</span><span id="map-64c">.</span><span id="map-54c">.</span><span id="map-44c">.</span><span id="map-34c">.</span><span id="map-24c">.</span><span id="map-14c">.</span><span id="map04c">.</span><span id="map14c">.</span><span id="map24c">.</span><span id="map34c">.</span><span id="map44c">.</span><span id="map54c">.</span><span id="map64c">.</span><span id="map74c">.</span><span id="map84c">.</span><span id="map94c">.</span><span id="map104c">.</span><br>
+        <span id="map-103c">.</span><span id="map-93c">.</span><span id="map-83c">.</span><span id="map-73c">.</span><span id="map-63c">.</span><span id="map-53c">.</span><span id="map-43c">.</span><span id="map-33c">.</span><span id="map-23c">.</span><span id="map-13c">.</span><span id="map03c">.</span><span id="map13c">.</span><span id="map23c">.</span><span id="map33c">.</span><span id="map43c">.</span><span id="map53c">.</span><span id="map63c">.</span><span id="map73c">.</span><span id="map83c">.</span><span id="map93c">.</span><span id="map103c">.</span><br>
+        <span id="map-102c">.</span><span id="map-92c">.</span><span id="map-82c">.</span><span id="map-72c">.</span><span id="map-62c">.</span><span id="map-52c">.</span><span id="map-42c">.</span><span id="map-32c">.</span><span id="map-22c">.</span><span id="map-12c">.</span><span id="map02c">A</span><span id="map12c">.</span><span id="map22c">.</span><span id="map32c">.</span><span id="map42c">.</span><span id="map52c">.</span><span id="map62c">.</span><span id="map72c">.</span><span id="map82c">.</span><span id="map92c">.</span><span id="map102c">.</span><br>
+        <span id="map-101c">.</span><span id="map-91c">.</span><span id="map-81c">.</span><span id="map-71c">.</span><span id="map-61c">.</span><span id="map-51c">.</span><span id="map-41c">.</span><span id="map-31c">.</span><span id="map-21c">.</span><span id="map-11c">/</span><span id="map01c">I</span><span id="map11c">\</span><span id="map21c">.</span><span id="map31c">.</span><span id="map41c">.</span><span id="map51c">.</span><span id="map61c">.</span><span id="map71c">.</span><span id="map81c">.</span><span id="map91c">.</span><span id="map101c">.</span><br>
+        <span id="map-100c">.</span><span id="map-90c">.</span><span id="map-80c">.</span><span id="map-70c">.</span><span id="map-60c">.</span><span id="map-50c">.</span><span id="map-40c">.</span><span id="map-30c">.</span><span id="map-20c">/</span><span id="map-10c">/</span><span id="map00c">I</span><span id="map10c">\</span><span id="map20c">\</span><span id="map30c">.</span><span id="map40c">.</span><span id="map50c">.</span><span id="map60c">.</span><span id="map70c">.</span><span id="map80c">.</span><span id="map90c">.</span><span id="map100c">.</span><br>
+        <span id="map-10-1c">.</span><span id="map-9-1c">.</span><span id="map-8-1c">.</span><span id="map-7-1c">.</span><span id="map-6-1c">.</span><span id="map-5-1c">.</span><span id="map-4-1c">.</span><span id="map-3-1c">/</span><span id="map-2-1c">/</span><span id="map-1-1c">/</span><span id="map0-1c">I</span><span id="map1-1c">\</span><span id="map2-1c">\</span><span id="map3-1c">\</span><span id="map4-1c">.</span><span id="map5-1c">.</span><span id="map6-1c">.</span><span id="map7-1c">.</span><span id="map8-1c">.</span><span id="map9-1c">.</span><span id="map10-1c">.</span><br>
+        <span id="map-10-2c">.</span><span id="map-9-2c">.</span><span id="map-8-2c">.</span><span id="map-7-2c">.</span><span id="map-6-2c">.</span><span id="map-5-2c">.</span><span id="map-4-2c">.</span><span id="map-3-2c">.</span><span id="map-2-2c">'</span><span id="map-1-2c">/</span><span id="map0-2c">I</span><span id="map1-2c">\</span><span id="map2-2c">'</span><span id="map3-2c">.</span><span id="map4-2c">.</span><span id="map5-2c">.</span><span id="map6-2c">.</span><span id="map7-2c">.</span><span id="map8-2c">.</span><span id="map9-2c">.</span><span id="map10-2c">.</span><br>
+        <span id="map-10-3c">.</span><span id="map-9-3c">.</span><span id="map-8-3c">.</span><span id="map-7-3c">.</span><span id="map-6-3c">.</span><span id="map-5-3c">.</span><span id="map-4-3c">.</span><span id="map-3-3c">.</span><span id="map-2-3c">.</span><span id="map-1-3c">'</span><span id="map0-3c">I</span><span id="map1-3c">'</span><span id="map2-3c">.</span><span id="map3-3c">.</span><span id="map4-3c">.</span><span id="map5-3c">.</span><span id="map6-3c">.</span><span id="map7-3c">.</span><span id="map8-3c">.</span><span id="map9-3c">.</span><span id="map10-3c">.</span><br>
+        <span id="map-10-4c">.</span><span id="map-9-4c">.</span><span id="map-8-4c">.</span><span id="map-7-4c">.</span><span id="map-6-4c">.</span><span id="map-5-4c">.</span><span id="map-4-4c">.</span><span id="map-3-4c">.</span><span id="map-2-4c">.</span><span id="map-1-4c">.</span><span id="map0-4c">.</span><span id="map1-4c">.</span><span id="map2-4c">.</span><span id="map3-4c">.</span><span id="map4-4c">.</span><span id="map5-4c">.</span><span id="map6-4c">.</span><span id="map7-4c">.</span><span id="map8-4c">.</span><span id="map9-4c">.</span><span id="map10-4c">.</span><br>
+        <span id="map-10-5c">.</span><span id="map-9-5c">.</span><span id="map-8-5c">.</span><span id="map-7-5c">.</span><span id="map-6-5c">.</span><span id="map-5-5c">.</span><span id="map-4-5c">.</span><span id="map-3-5c">.</span><span id="map-2-5c">.</span><span id="map-1-5c">.</span><span id="map0-5c">.</span><span id="map1-5c">.</span><span id="map2-5c">.</span><span id="map3-5c">.</span><span id="map4-5c">.</span><span id="map5-5c">.</span><span id="map6-5c">.</span><span id="map7-5c">.</span><span id="map8-5c">.</span><span id="map9-5c">.</span><span id="map10-5c">.</span><br>
+        <span id="map-10-6c">.</span><span id="map-9-6c">.</span><span id="map-8-6c">.</span><span id="map-7-6c">.</span><span id="map-6-6c">.</span><span id="map-5-6c">.</span><span id="map-4-6c">.</span><span id="map-3-6c">.</span><span id="map-2-6c">.</span><span id="map-1-6c">.</span><span id="map0-6c">.</span><span id="map1-6c">.</span><span id="map2-6c">.</span><span id="map3-6c">.</span><span id="map4-6c">.</span><span id="map5-6c">.</span><span id="map6-6c">.</span><span id="map7-6c">.</span><span id="map8-6c">.</span><span id="map9-6c">.</span><span id="map10-6c">.</span><br>
+        <span id="map-10-7c">.</span><span id="map-9-7c">.</span><span id="map-8-7c">.</span><span id="map-7-7c">.</span><span id="map-6-7c">.</span><span id="map-5-7c">.</span><span id="map-4-7c">.</span><span id="map-3-7c">.</span><span id="map-2-7c">.</span><span id="map-1-7c">.</span><span id="map0-7c">.</span><span id="map1-7c">.</span><span id="map2-7c">.</span><span id="map3-7c">.</span><span id="map4-7c">.</span><span id="map5-7c">.</span><span id="map6-7c">.</span><span id="map7-7c">.</span><span id="map8-7c">.</span><span id="map9-7c">.</span><span id="map10-7c">.</span><br>
+        <span id="map-10-8c">.</span><span id="map-9-8c">.</span><span id="map-8-8c">.</span><span id="map-7-8c">.</span><span id="map-6-8c">.</span><span id="map-5-8c">.</span><span id="map-4-8c">.</span><span id="map-3-8c">.</span><span id="map-2-8c">.</span><span id="map-1-8c">.</span><span id="map0-8c">.</span><span id="map1-8c">.</span><span id="map2-8c">.</span><span id="map3-8c">.</span><span id="map4-8c">.</span><span id="map5-8c">.</span><span id="map6-8c">.</span><span id="map7-8c">.</span><span id="map8-8c">.</span><span id="map9-8c">.</span><span id="map10-8c">.</span><br>
+        <span id="map-10-9c">.</span><span id="map-9-9c">.</span><span id="map-8-9c">.</span><span id="map-7-9c">.</span><span id="map-6-9c">.</span><span id="map-5-9c">.</span><span id="map-4-9c">.</span><span id="map-3-9c">.</span><span id="map-2-9c">.</span><span id="map-1-9c">.</span><span id="map0-9c">.</span><span id="map1-9c">.</span><span id="map2-9c">.</span><span id="map3-9c">.</span><span id="map4-9c">.</span><span id="map5-9c">.</span><span id="map6-9c">.</span><span id="map7-9c">.</span><span id="map8-9c">.</span><span id="map9-9c">.</span><span id="map10-9c">.</span><br>
+        <span id="map-10-10c">.</span><span id="map-9-10c">.</span><span id="map-8-10c">.</span><span id="map-7-10c">.</span><span id="map-6-10c">.</span><span id="map-5-10c">.</span><span id="map-4-10c">.</span><span id="map-3-10c">.</span><span id="map-2-10c">.</span><span id="map-1-10c">.</span><span id="map0-10c">.</span><span id="map1-10c">.</span><span id="map2-10c">.</span><span id="map3-10c">.</span><span id="map4-10c">.</span><span id="map5-10c">.</span><span id="map6-10c">.</span><span id="map7-10c">.</span><span id="map8-10c">.</span><span id="map9-10c">.</span><span id="map10-10c">.</span><br>
+        <h3 id="coord" value="1">Location : Unknown</h3> <!--Coordinates-->
+    </header>
+    <nav>
+        <a href="index.html">Back to Index</a><a> </a><a href="Core.html">space thingy</a><a> </a><a href="bio.html">bio</a><a> </a><a href="https://www.eelslap.com">Eel Slap (very important)</a><br>
+        <!-- Top Buttons -->
+        <button id="btnAlert" onclick="addItem()"> Debug Item</button>
+        <button id="btnAlert" onclick="randomItem()"> Random Debug Item</button>
+        <button id="btnAlert" onclick="movePoof()"> Debug Telepoof</button>
+        <button id="btnAlert" onclick="printRoomDebug();"> Debug Tile Viewer</button>
+        <button id="btnWorldMap" onclick="writeWorldMap()"> Debug World Map</button>
+        <button id="btnLocalMap" onclick="writeMapTest()"> Debug Local Map</button>
+        <!-- Text Feed -->
+        <p id="feed">LOADING...</p>
+    </nav>
+    <article> <!-- Inventory & other stuff -->
+        <button id="btnSelf" onclick="writeSelf()"> [S]elf</button>
+        <button id="btnInv" onclick="writeInv()"> [I]nventory</button>
+        <button id="btnMind" onclick="writeMind()"> I[n]trospection</button>
+        <button id="btnMOTD" onclick="motd()">MOTD & Other Stuff</button>
+        <br><p id="sideFeed"></p>
+    </article>
+    <section id="view">
+        WIP
+    </section>
+</html>
+
+<script>
+    const invStorage = []; // Sets Storage
+    const coord = {x: 0, y: 0, z: 0};
+    const spawnCoord = {x: 0, y: 0, z: 0}; // Sets default coordinates. x is vertical, y is horizontal, z is floor.
+    const biome = {cur: "Nowhere", a: "#000000", b: "#1a1a1a", c: "#212121", d: "#3d3d3d"}
+    var diceroll = 1 // Sets diceroll
+    const playerCoord = {x: 0, y: 0, z: 0}
+    const worldsize = {x: 25600, y: 3200} // Sets overworld default width & height
+    var windowHeight = window.innerHeight
+    var windowWidth = window.innerWidth
+
+    // - MOTD -
+    function motd(){
+        x = " - MOTD - <br><br>Current Todo List:<br>- Change default spawnpoint.<br>- Make unique tile listings for each biome."
+        x += "<br>- Finish mouse-over looking system."
+        x += "<br><br> - DEV GOALS -"
+        x += "<br>- Basic Worldgen - X"
+        x += "<br>- Structure System - X"
+        x += "<br>- Building System - "
+        x += "<br>- Biome Generation - X"
+        x += "<br>- Change from Turn-Based to Real-Time - "
+        x += "<br>- Mobile Creatures - "
+        x += "<br>- Combat - "
+        x += "<br>-- Spellcasting - "
+        x += "<br>-- Target locking - "
+        x += "<br>- Survival Elements - "
+        x += "<br>- Complete Z-Level Integration - "
+        x += "<br>- Environment & Biome Variety - "
+        x += "<br>- Dimensions - "
+        x += "<br>- Multiplayer Support - "
+        x += "<br><br> - Make the size of the game self-adjusting to screen size."
+        document.getElementById("sideFeed").innerHTML = x
+    }
+
+    function displayCoords(){ // Sets coord to current coordinates, and updates it.
+        document.getElementById("coord").innerHTML = "Location : " + (coord.x) + ", " + coord.y + ", " + coord.z;
+    }
+    displayCoords()
+    setTimeout(function() {
+        structureGen()
+        writeWorldMap()
+        writeWorldTiles()
+    }, 1)
+    setTimeout(function() {
+        writeInv()
+    }, 2)
+
+    document.getElementById("feed").innerHTML = "PRESS '5' OR 'SPACE' TO START"
+
+    // - KEY SENSORS -
+var menuMode = "overworld" //NOTE: When the menus are fully integrated, this will default to main.
+// -MENU LIST-
+// "main" - Starting menu.
+// "overworld" - Gameplay. Moving around and such.
+// "options" - Exit menu during gameplay.
+// "inv" - Inventory.
+// "self" - Displays appearance & other qualities.
+// "mind" - Displays mental modifiers.
+
+    window.addEventListener("keyup", function (event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if the event was already processed
+  }
+
+  switch (event.key) { //Assign keybinds here.   //NOTE: The menu integration is incomplete.
+  // Most common inputs
+    case "Escape": if(menuMode=="main"){}else if(menuMode=="overworld"){menuMode="options"; writeMap()}else if(menuMode=="options"){menuMode="overworld"; writeMap()}else if(menuMode=="inv"){menuMode="overworld"; writeMap()}else if(menuMode=="self"){menuMode="overworld"; writeMap()}else if(menuMode=="mind"){menuMode="overworld"; writeMap()}
+        break;
+    case "`": if(menuMode=="main"){}else if(menuMode=="overworld"){}else if(menuMode=="options"){}else if(menuMode=="inv"){}else if(menuMode=="self"){}else if(menuMode=="mind"){}
+        break;
+    case "1": if(menuMode=="main"){}else if(menuMode=="overworld"){moveSW()}else if(menuMode=="options"){}else if(menuMode=="inv"){}else if(menuMode=="self"){}else if(menuMode=="mind"){}
+        break;
+    case "2": if(menuMode=="main"){}else if(menuMode=="overworld"){moveSouth()}else if(menuMode=="options"){}else if(menuMode=="inv"){}else if(menuMode=="self"){}else if(menuMode=="mind"){}
+        break;
+    case "3": if(menuMode=="main"){}else if(menuMode=="overworld"){moveSE()}else if(menuMode=="options"){}else if(menuMode=="inv"){}else if(menuMode=="self"){}else if(menuMode=="mind"){}
+        break;
+    case "4": if(menuMode=="main"){}else if(menuMode=="overworld"){moveWest()}else if(menuMode=="options"){}else if(menuMode=="inv"){}else if(menuMode=="self"){}else if(menuMode=="mind"){}
+        break;
+    case "5": if(menuMode=="main"){}else if(menuMode=="overworld"){moveWait()}else if(menuMode=="options"){}else if(menuMode=="inv"){}else if(menuMode=="self"){}else if(menuMode=="mind"){}
+        break;
+    case "6": if(menuMode=="main"){}else if(menuMode=="overworld"){moveEast()}else if(menuMode=="options"){}else if(menuMode=="inv"){}else if(menuMode=="self"){}else if(menuMode=="mind"){}
+        break;
+    case "7": if(menuMode=="main"){}else if(menuMode=="overworld"){moveNW()}else if(menuMode=="options"){}else if(menuMode=="inv"){}else if(menuMode=="self"){}else if(menuMode=="mind"){}
+        break;
+    case "8": if(menuMode=="main"){}else if(menuMode=="overworld"){moveNorth()}else if(menuMode=="options"){}else if(menuMode=="inv"){}else if(menuMode=="self"){}else if(menuMode=="mind"){}
+        break;
+    case "9": if(menuMode=="main"){}else if(menuMode=="overworld"){moveNE()}else if(menuMode=="options"){}else if(menuMode=="inv"){}else if(menuMode=="self"){}else if(menuMode=="mind"){}
+        break;
+    case "0": 
+        break;
+    case "-":
+        break;
+    case "=":
+        break;
+    case "Backspace": 
+        break;
+    case "Tab":
+        break;
+    case "q":
+        break;
+    case "w":
+        break;
+    case "e":
+        break;
+    case "r":
+        break;
+    case "t":
+        break;
+    case "y":
+        break;
+    case "u":
+        break;
+    case "i":
+        break;
+    case "o":
+        break;
+    case "p":
+        break;
+    case "[":
+        break;
+    case "]":
+        break;
+    case "a":
+        break;
+    case "s":
+        break;
+    case "d":
+        break;
+    case "f":
+        break;
+    case "g":
+        break;
+    case "h":
+        break;
+    case "j":
+        break;
+    case "k":
+        break;
+    case "l":
+        break;
+    case ";":
+        break;
+    case "'":
+        break;
+    case "Enter":
+        break;
+    case "z":
+        break;
+    case "x":
+        break;
+    case "c":
+        break;
+    case "v":
+        break;
+    case "b":
+        break;
+    case "n": writeMind()
+        break;
+    case "m":
+        break;
+    case ",":
+        break;
+    case ".":
+        break;
+    case "/":
+        break;
+    case "ArrowUp": moveNorth()
+        break;
+    case "ArrowDown": moveSouth()
+        break;
+    case "ArrowLeft": moveWest()
+        break;
+    case "ArrowRight": moveEast()
+        break;
+    case " ": moveWait()
+        break;
+    // + Shift
+    case "~":
+        break;
+    case "!":
+        break;
+    case "@":
+        break;
+    case "#":
+        break;
+    case "$":
+        break;
+    case "%":
+        break;
+    case "^":
+        break;
+    case "&":
+        break;
+    case "*":
+        break;
+    case "(":
+        break;
+    case ")":
+        break;
+    case "_":
+        break;
+    case "+":
+        break;
+    case "Q":
+        break;
+    case "W":
+        break;
+    case "E":
+        break;
+    case "R":
+        break;
+    case "T":
+        break;
+    case "Y":
+        break;
+    case "U":
+        break;
+    case "I": writeInv()
+        break;
+    case "O":
+        break;
+    case "P":
+        break;
+    case "{":
+        break;
+    case "}":
+        break;
+    case "|":
+        break;
+    case "A":
+        break;
+    case "S": writeSelf()
+        break;
+    case "D":
+        break;
+    case "F":
+        break;
+    case "G":
+        break;
+    case "H":
+        break;
+    case "J":
+        break;
+    case "K":
+        break;
+    case "L":
+        break;
+    case ":":
+        break;
+    case '"':
+        break;
+    case "Z":
+        break;
+    case "X":
+        break;
+    case "C":
+        break;
+    case "V":
+        break;
+    case "B":
+        break;
+    case "N":
+        break;
+    case "M":
+        break;
+    case "<": moveDown()
+        break;
+    case ">": moveUp()
+        break;
+    case "?":
+        break;
+    // Numpad
+    case "Home": moveNW()
+        break;
+    case "PageUp": moveNE()
+        break;
+    case "Clear": moveWait() //On the numpad, its 5
+        break;
+    case "End": moveSW()
+        break;
+    case "PageDown": moveSE()
+        break;
+    case "Insert":
+        break;
+    case "Delete":
+    // Unknown input
+    default:
+        return;
+  }
+  // Cancel the default action to avoid it being handled twice
+  event.preventDefault();
+}, true);
+// the last option dispatches the event to the listener first then dispatches event to window
+
+
+
+    // - MOVEMENT BUTTONS CORE -
+    function moveUp(){
+        coord.z = coord.z + 1;
+        playerCoord.z = playerCoord.z + 1;
+        checkRoom();
+        x = tilesList.find(searchCoords);
+        var y = tileIDs.find(y => y.id === x.id)
+        if(y.stair == 2 || y.stair == 3){ // stair 2 means the stairs move up. stair 3 means the stairs move both up and down.
+            displayCoords();
+            checkBiome()
+            document.getElementById("feed").innerHTML = "You move up the " + y.name + "."
+        } else if(y.stair == 0 || y.stair == 1){ //stair 0 means the area is solid and inpassable. stair 1 means the stairs move down.
+            coord.z = coord.z - 1
+            playerCoord.z = playerCoord.z - 1
+            document.getElementById("feed").innerHTML = "There is nowhere to move up!" 
+        } else {
+            coord.z = coord.z - 1
+            playerCoord.z = playerCoord.z - 1
+            document.getElementById("feed").innerHTML = "ERROR: " + y.name + " Lacks a stair value. Assuming stair = 0."
+        }
+        printRoom();
+    }
+    function moveNorth(){
+        coord.y = coord.y + 1;
+        playerCoord.y = playerCoord.y + 1;
+        checkRoom();
+        x = tilesList.find(searchCoords);
+        var y = tileIDs.find(y => y.id === x.id)
+        if(y.wall == 0){ // wall 0 means the area is open.
+            displayCoords();
+            checkBiome()
+            document.getElementById("feed").innerHTML = "You move North."
+        } else if(y.wall == 1){ //wall 1 means the area is solid and inpassable.
+            coord.y = coord.y - 1
+            playerCoord.y = playerCoord.y - 1;
+            document.getElementById("feed").innerHTML = "You try to move North, but there is a " + y.name + " in the way!" 
+        } else {
+            coord.y = coord.y - 1
+            playerCoord.y = playerCoord.y - 1;
+            document.getElementById("feed").innerHTML = "ERROR: " + y.name + " Lacks a wall value. Assuming wall = 1."
+        }
+        printRoom();
+    }
+    function moveDown(){
+        coord.z = coord.z - 1;
+        playerCoord.z = playerCoord.z - 1
+        checkRoom();
+        x = tilesList.find(searchCoords);
+        var y = tileIDs.find(y => y.id === x.id)
+        if(y.stair == 1 || y.stair == 3){ // stair 1 means the stairs move down. stair 3 means the stairs move both up and down.
+            displayCoords();
+            checkBiome()
+            document.getElementById("feed").innerHTML = "You move down the " + y.name + "."
+        } else if(y.stair == 0 || y.stair == 2){ //stair 0 means the area is solid and inpassable. stair 2 means the stairs move up.
+            coord.z = coord.z + 1
+            playerCoord.z = playerCoord.z + 1;
+            document.getElementById("feed").innerHTML = "There is nowhere to move down!" 
+        } else {
+            coord.z = coord.z + 1
+            playerCoord.z = playerCoord.z + 1;
+            document.getElementById("feed").innerHTML = "ERROR: " + y.name + " Lacks a stair value. Assuming stair = 0."
+        }
+        printRoom();
+    }
+    function moveWest(){
+        coord.x = coord.x - 1;
+        playerCoord.x = playerCoord.x - 1;
+        if(coord.x <= -1){
+            coord.x = coord.x + worldsize.x
+            playerCoord.x = coord.x
+        }
+        checkRoom();
+        x = tilesList.find(searchCoords);
+        var y = tileIDs.find(y => y.id === x.id)
+        if(y.wall == 0){ // wall 0 means the area is open.
+            displayCoords();
+            checkBiome()
+            document.getElementById("feed").innerHTML = "You move West."
+        } else if(y.wall == 1){ //wall 1 means the area is solid and inpassable.
+            if(coord.x >= worldsize.x){
+            coord.x = coord.x - worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x + 1
+            playerCoord.x = playerCoord.x + 1;
+            }
+            document.getElementById("feed").innerHTML = "You try to move West, but there is a " + y.name + " in the way!" 
+        } else {
+            if(coord.x >= worldsize.x){
+            coord.x = coord.x - worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x + 1
+            playerCoord.x = playerCoord.x + 1;
+            }
+            document.getElementById("feed").innerHTML = "ERROR: " + y.name + " Lacks a wall value. Assuming wall = 1."
+        }
+        printRoom();
+    }
+    function moveEast(){
+        coord.x = coord.x + 1;
+        playerCoord.x = playerCoord.x + 1;
+        if(coord.x >= worldsize.x){
+            coord.x = coord.x - worldsize.x
+            playerCoord.x = coord.x
+        }
+        checkRoom();
+        x = tilesList.find(searchCoords);
+        var y = tileIDs.find(y => y.id === x.id)
+        if(y.wall == 0){ // wall 0 means the area is open.
+            displayCoords();
+            checkBiome()
+            document.getElementById("feed").innerHTML = "You move East."
+        } else if(y.wall == 1){ //wall 1 means the area is solid and inpassable.
+            if(coord.x <= -1){
+            coord.x = coord.x + worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x - 1
+            playerCoord.x = playerCoord.x - 1;
+            }
+            document.getElementById("feed").innerHTML = "You try to move East, but there is a " + y.name + " in the way!" 
+        } else {
+            if(coord.x <= -1){
+            coord.x = coord.x + worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x - 1
+            playerCoord.x = playerCoord.x - 1;
+            }
+            document.getElementById("feed").innerHTML = "ERROR: " + y.name + " Lacks a wall value. Assuming wall = 1."
+        }
+        printRoom();
+    }
+    function moveSouth(){
+        coord.y = coord.y - 1;
+        playerCoord.y = playerCoord.y - 1;
+        checkRoom();
+        x = tilesList.find(searchCoords);
+        var y = tileIDs.find(y => y.id === x.id)
+        if(y.wall == 0){ // wall 0 means the area is open.
+            displayCoords();
+            checkBiome()
+            document.getElementById("feed").innerHTML = "You move South."
+        } else if(y.wall == 1){ //wall 1 means the area is solid and inpassable.
+            coord.y = coord.y + 1
+            playerCoord.y = playerCoord.y + 1;
+            document.getElementById("feed").innerHTML = "You try to move South, but there is a " + y.name + " in the way!" 
+        } else {
+            coord.y = coord.y + 1
+            playerCoord.y = playerCoord.y + 1;
+            document.getElementById("feed").innerHTML = "ERROR: " + y.name + " Lacks a wall value. Assuming wall = 1."
+        }
+        printRoom();
+    }
+    function moveNW(){
+        coord.x = coord.x - 1;
+        coord.y = coord.y + 1;
+        playerCoord.x = playerCoord.x - 1;
+        playerCoord.y = playerCoord.y + 1;
+        if(coord.x <= -1){
+            coord.x = coord.x + worldsize.x
+            playerCoord.x = coord.x
+        }
+        checkRoom();
+        x = tilesList.find(searchCoords);
+        var y = tileIDs.find(y => y.id === x.id)
+        if(y.wall == 0){ // wall 0 means the area is open.
+            displayCoords();
+            checkBiome()
+            document.getElementById("feed").innerHTML = "You move North-West."
+        } else if(y.wall == 1){ //wall 1 means the area is solid and inpassable.
+            coord.y = coord.y - 1
+            playerCoord.y = playerCoord.y - 1;
+            if(coord.x >= worldsize.x + 1){
+            coord.x = coord.x - worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x + 1
+            playerCoord.x = playerCoord.x + 1;
+            }
+            document.getElementById("feed").innerHTML = "You try to move North-West, but there is a " + y.name + " in the way!" 
+        } else {
+            coord.y = coord.y - 1
+            playerCoord.y = playerCoord.y - 1;
+            if(coord.x >= worldsize.x + 1){
+            coord.x = coord.x - worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x + 1
+            playerCoord.x = playerCoord.x + 1;
+            }
+            document.getElementById("feed").innerHTML = "ERROR: " + y.name + " Lacks a wall value. Assuming wall = 1."
+        }
+        printRoom();
+    }
+    function moveNE(){
+        coord.x = coord.x + 1;
+        coord.y = coord.y + 1;
+        playerCoord.x = playerCoord.x + 1;
+        playerCoord.y = playerCoord.y + 1;
+        if(coord.x >= worldsize.x + 1){
+            coord.x = coord.x - worldsize.x
+            playerCoord.x = coord.x
+        }
+        checkRoom();
+        x = tilesList.find(searchCoords);
+        var y = tileIDs.find(y => y.id === x.id)
+        if(y.wall == 0){ // wall 0 means the area is open.
+            displayCoords();
+            checkBiome()
+            document.getElementById("feed").innerHTML = "You move North-East."
+        } else if(y.wall == 1){ //wall 1 means the area is solid and inpassable.
+            coord.y = coord.y - 1
+            playerCoord.y = playerCoord.y - 1;
+            if(coord.x <= -1){
+            coord.x = coord.x + worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x - 1
+            playerCoord.x = playerCoord.x - 1;
+            }
+            document.getElementById("feed").innerHTML = "You try to move North-East, but there is a " + y.name + " in the way!" 
+        } else {
+            coord.y = coord.y - 1
+            playerCoord.y = playerCoord.y - 1;
+            if(coord.x <= -1){
+            coord.x = coord.x + worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x - 1
+            playerCoord.x = playerCoord.x - 1;
+            }
+            document.getElementById("feed").innerHTML = "ERROR: " + y.name + " Lacks a wall value. Assuming wall = 1."
+        }
+        printRoom();
+    }
+    function moveSW(){
+        coord.x = coord.x - 1;
+        coord.y = coord.y - 1;
+        playerCoord.x = playerCoord.x - 1;
+        playerCoord.y = playerCoord.y - 1;
+        if(coord.x <= -1){
+            coord.x = coord.x + worldsize.x
+            playerCoord.x = coord.x
+        }
+        checkRoom();
+        x = tilesList.find(searchCoords);
+        var y = tileIDs.find(y => y.id === x.id)
+        if(y.wall == 0){ // wall 0 means the area is open.
+            displayCoords();
+            checkBiome()
+            document.getElementById("feed").innerHTML = "You move South-West."
+        } else if(y.wall == 1){ //wall 1 means the area is solid and inpassable.
+            coord.y = coord.y + 1
+            playerCoord.y = playerCoord.y + 1;
+            if(coord.x >= worldsize.x + 1){
+            coord.x = coord.x - worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x + 1
+            playerCoord.x = playerCoord.x + 1;
+            }
+            document.getElementById("feed").innerHTML = "You try to move South-West, but there is a " + y.name + " in the way!" 
+        } else {
+            coord.y = coord.y + 1
+            playerCoord.y = playerCoord.y + 1;
+            if(coord.x >= worldsize.x + 1){
+            coord.x = coord.x - worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x + 1
+            playerCoord.x = playerCoord.x + 1;
+            }
+            document.getElementById("feed").innerHTML = "ERROR: " + y.name + " Lacks a wall value. Assuming wall = 1."
+        }
+        printRoom();
+    }
+    function moveSE(){
+        coord.x = coord.x + 1;
+        coord.y = coord.y - 1;
+        playerCoord.x = playerCoord.x + 1;
+        playerCoord.y = playerCoord.y - 1;
+        if(coord.x >= worldsize.x + 1){
+            coord.x = coord.x - worldsize.x
+            playerCoord.x = coord.x
+        }
+        checkRoom();
+        x = tilesList.find(searchCoords);
+        var y = tileIDs.find(y => y.id === x.id)
+        if(y.wall == 0){ // wall 0 means the area is open.
+            displayCoords();
+            checkBiome()
+            document.getElementById("feed").innerHTML = "You move South-East."
+        } else if(y.wall == 1){ //wall 1 means the area is solid and inpassable.
+            coord.y = coord.y + 1
+            playerCoord.y = playerCoord.y + 1;
+            if(coord.x <= -1){
+            coord.x = coord.x + worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x - 1
+            playerCoord.x = playerCoord.x - 1;
+            }
+            document.getElementById("feed").innerHTML = "You try to move South-East, but there is a " + y.name + " in the way!" 
+        } else {
+            coord.y = coord.y + 1
+            playerCoord.y = playerCoord.y + 1;
+            if(coord.x <= -1){
+            coord.x = coord.x + worldsize.x
+            playerCoord.x = coord.x
+            }else{
+            coord.x = coord.x - 1
+            playerCoord.x = playerCoord.x - 1;
+            }
+            document.getElementById("feed").innerHTML = "ERROR: " + y.name + " Lacks a wall value. Assuming wall = 1."
+        }
+        printRoom();
+    }
+    function moveWait(){
+        document.getElementById("feed").innerHTML = "You stay put."
+        checkRoom();
+        displayCoords();
+        checkBiome();
+        printRoom();
+    }
+    
+    // debug teleport
+    function movePoof(){
+        x = prompt("X coord")
+        y = prompt("Y coord")
+        z = prompt("Z coord")
+        coord.x = parseInt(x)
+        coord.y = parseInt(y)
+        coord.z = parseInt(z)
+        playerCoord.x = parseInt(x)
+        playerCoord.y = parseInt(y)
+        playerCoord.z = parseInt(z)
+        moveWait()
+        document.getElementById("feed").innerHTML = "WOOOOSH!!"
+    }
+
+    // - MAP DISPLAY -
+    function writeMap(){
+        var xMoves = 0
+        var yMoves = 0
+        coord.x = coord.x - 9;
+        coord.y = coord.y - 9;
+        while (yMoves != 19){
+            while (xMoves != 19){
+                a = 0
+                if(coord.x >= worldsize.x){
+                    coord.x = coord.x - worldsize.x
+                    a = 1
+                }else if(coord.x <= -1){
+                    coord.x = coord.x + worldsize.x
+                    a = 2
+                }
+                checkRoom()
+                x = tilesList.find(searchCoords);
+                z = tileIDs.find(y => y.id === x.id)
+                var xHolder = xMoves - 9
+                var yHolder = yMoves - 9
+                if (yHolder > -10 && yHolder < 10 && xHolder > -10 && xHolder < 10){
+                    y = "map" + xHolder + yHolder + "c"
+                    document.getElementById(y).innerHTML = z.symbol
+                    if (z.color == 0){
+                        document.getElementById(y).style.color = biome.a
+                    } else if (z.color == 1){
+                        document.getElementById(y).style.color = biome.b
+                    } else if (z.color == 2){
+                        document.getElementById(y).style.color = biome.c
+                    } else if (z.color == 3){
+                        document.getElementById(y).style.color = biome.d
+                    } else {
+                        document.getElementById(y).style.color = biome.d
+                    }
+                if(a == 1){
+                    coord.x = coord.x + worldsize.x
+                }else if(a == 2){
+                    coord.x = coord.x - worldsize.x
+                }
+                }
+                coord.x = coord.x + 1;
+                xMoves = xMoves + 1
+            }
+            coord.x = coord.x - 19
+            coord.y = coord.y + 1
+            xMoves = 0
+            yMoves = yMoves + 1
+        }
+        coord.x = coord.x + 9
+        coord.y = coord.y - 10
+        document.getElementById("map00c").innerHTML = "@"
+        document.getElementById("map00c").style.color = biome.d
+    }
+
+
+    function checkBiome(){ //Good Colors Here: https://lospec.com/palette-list/tag/gameboy/    //Most palettes are based off of this: https://lospec.com/palette-list/nostalgia
+        if(playerCoord.x == 0 || playerCoord.x <= -1){
+            x = 0
+        }else if(playerCoord.x >= worldsize.x + 1){
+            x = 31
+        }else{
+            x = Math.floor(playerCoord.x / 100)
+        }
+        if(playerCoord.y==0){
+            y = 0
+        }else{
+            y = Math.floor(playerCoord.y / 100)
+        }
+        z = world[y]
+        if (z == undefined){
+            if(playerCoord.y <= -1){
+                z = 0
+            }else if(playerCoord.y >= worldsize.x + 1){
+                z = 6
+            }else{
+                z = 7
+            }
+        }else{
+            z = z[x]
+        }
+        if(z == 0 || playerCoord.y <= -1){ //NOTE: Add y-level variants to color palettes to accompany the increase in light.
+            biome.a = "#303030"//Darkest Color
+            biome.b = "#545454"
+            biome.c = "#737373"
+            biome.d = "#949494" //Lightest Color
+            biome.cur = "Glacier"
+        }else if(z == 1){
+            biome.a = "#104d50"
+            biome.b = "#288080"
+            biome.c = "#40a8a3"
+            biome.d = "#58d0c1"
+            biome.cur = "Ocean"
+        }else if(z == 2){
+            biome.a = "#405010"
+            biome.b = "#708028"
+            biome.c = "#a0a840"
+            biome.d = "#d0d058"
+            biome.cur = "Plains"
+        }else if(z == 3){
+            biome.a = "#0E420B"
+            biome.b = "#135C10"
+            biome.c = "#197814"
+            biome.d = "#25AD1D"
+            biome.cur = "Forest"
+        }else if(z == 4){
+            biome.a = "#303030"
+            biome.b = "#545454"
+            biome.c = "#737373"
+            biome.d = "#949494"
+            biome.cur = "Mountains"
+        }else if(z == 5){
+            biome.a = "#403726"
+            biome.b = "#5C4F37"
+            biome.c = "#706043"
+            biome.d = "#AD9568"
+            biome.cur = "Desert"
+        }else if(z == 6 || playerCoord.y >= worldsize.x + 1){
+            biome.a = "#422523"
+            biome.b = "#5C3431"
+            biome.c = "#794440"
+            biome.d = "#AD615C"
+            biome.cur = "Sun-Scorned Wastes"
+        }else if(z == 7){
+            biome.a = "#303030"
+            biome.b = "#545454"
+            biome.c = "#737373"
+            biome.d = "#949494"
+            biome.cur = "Nowhere"
+        }else{
+            biome.a = "#303030"
+            biome.b = "#545454"
+            biome.c = "#737373"
+            biome.d = "#949494"
+            biome.cur = "Nowhere"
+        }
+    }
+    // Make the graphics system a gradient? Perhaps when real-time becomes fully implemented you can have a timeout that slowly adjusts the gradient. You will need to find a good color mixing method though.
+    // PLANNED BIOMES: Swamp, Forest Variants, Mountain & Glacier Variants, Tundra, Bushlands, Hills
+
+
+    // - MAP LOOPS -
+    function startCharBlink(){ //NOTE: Currently unused and slightly delayed.
+        document.getElementById("map00c").innerHTML = "@"
+            setInterval(function(){
+                var charBlinkHolder = tilesList.find(searchCoords);
+                document.getElementById("map00c").innerHTML = charBlinkHolder.symbol
+            }, 2000);
+        setTimeout(function() {
+            setInterval(function(){
+                document.getElementById("map00c").innerHTML = "@"
+            }, 2000);
+        }, 1000);
+    }
+
+
+    // - DEBUG BUTTONS - 
+    function writeInv(){ //Writes inventory output, then pastes it. x is text carrier.
+        x = " -- Inventory --"; //Names Inventory Carrier
+        invStorage.forEach(displayInv) //Adds inventory contents to carrier
+        x += "<br><br>Items : " + invStorage.length //Gives total quantity of items
+        document.getElementById("sideFeed").innerHTML = x; //Prints
+    }
+
+    function displayInv(value){ //Related to writeInv, adds everything in invStorage to carrier.
+        x += "<br><br>" + value
+    }
+
+
+    //Placeholder to add things to inventory
+    function addItem(){
+        document.getElementById("feed").innerHTML = "Debug Item Added";
+        invStorage.push("testitem");
+        writeInv()
+    }
+
+    //Placeholder to add random things to inventory
+    function randomItem(){
+        var x = "You find"; //Sets x to be the text carrier.
+        roll1d6(); //Gets a random number from diceroll.
+        var y = loottableDebug1[diceroll]; //Sets y to random table result, as determined by riceroll.
+        invStorage.push(y.name); //Adds random item to table.
+        x += y.an + y.name + "!"; //Strings together the a/an, the name, and an exclamation point.
+        document.getElementById("feed").innerHTML = x; //Updates script.
+        writeInv()
+    }
+    
+    //Inspect inputed coordinates.
+    function printRoomDebug(){
+        x = prompt("X coord")
+        y = prompt("Y coord")
+        z = prompt("Z coord")
+        x = parseInt(x)
+        y = parseInt(y)
+        z = parseInt(z)
+        a = coord.x
+        b = coord.y
+        c = coord.z
+        coord.x = x
+        coord.y = y
+        coord.z = z
+        carrier = tilesList.find(searchCoords)
+        if(coord.x==0 || coord.x<=-1){
+            bioX = 0
+        }else if(coord.x>=25601){
+            bioX = 256
+        }else{
+            bioX = Math.floor(coord.x / 100)
+        }
+        if(coord.y==0){
+            bioY = 0
+        }else{
+            bioY = Math.floor(coord.y / 100)
+        }
+        checkBiome()
+        document.getElementById("feed").innerHTML = carrier.xid + ", " + carrier.yid + ", " + carrier.zid + "<br>" + carrier.id + "<br>" + bioX + "," + bioY + "<br>" + biome.cur
+        coord.x = a
+        coord.y = b
+        coord.z = c
+    }
+
+    // - INTROSPECTION -
+    function writeSelf(){ //Heavy WIP. Will write appearance
+        document.getElementById("sideFeed").innerHTML = "TODO"
+    }
+    function writeMind(){ //Heavy WIP. Will write mental state & skills.
+        document.getElementById("sideFeed").innerHTML = "TODO"
+    }
+
+    // - WORLD GENERATOR - WIP
+    const world = [];
+    var worldDict = {
+        0: '=', // Glacier
+        1: '.', // Ocean
+        2: '_', // Plains
+        3: '^', // Forest
+        4: 'M', // Mountains
+        5: '~', // Desert
+        6: '+', // Sun-Scorned
+    }
+
+    function writeWorldTiles(){ //currently designed to only print z-level 0.
+        output = "";
+        var worldheight = worldsize.y;
+        var worldwidth = worldsize.x;
+        for(var row = 0; row < worldheight; row++){
+            tilesList.push([])
+            document.getElementById("sideFeed").innerHTML += "<br>"
+                for (var col = 0; col < worldwidth; col++){
+                    playerCoord.x = parseInt(col)
+                    playerCoord.y = parseInt(row)
+                    if(playerCoord.x==0 || playerCoord.x <= -1){
+                        x = 0
+                    }else if(playerCoord.x >= worldsize.x + 1){
+                        x = 31
+                    }else{
+                        x = Math.floor(playerCoord.x / 100)
+                    }
+                    if(playerCoord.y==0){
+                        y = 0
+                    }else{
+                        y = Math.floor(playerCoord.y / 100)
+                    }
+                    z = world[x][y]
+                    if (z == "Glacier"){
+                        x = Math.floor(Math.random() * tiletable2.length);
+                        y = tiletable2[x]
+                    }else if (z == "Ocean"){
+                        x = Math.floor(Math.random() * tiletable2.length);
+                        y = tiletable2[x]
+                    }else if (z == "Plains"){
+                        x = Math.floor(Math.random() * tiletable1.length);
+                        y = tiletable1[x]
+                    }else if (z == "Forest"){
+                        x = Math.floor(Math.random() * tiletable1.length);
+                        y = tiletable1[x]
+                    }else if (z == "Mountains"){
+                        x = Math.floor(Math.random() * tiletable2.length);
+                        y = tiletable2[x]
+                    }else if (z == "Desert"){
+                        x = Math.floor(Math.random() * tiletable1.length);
+                        y = tiletable1[x]
+                    }else if (z == "Sun-Scorned Wastes"){
+                        x = Math.floor(Math.random() * tiletable1.length);
+                        y = tiletable1[x]
+                    }else if (z == "Nowhere"){
+                        x = Math.floor(Math.random() * tiletable2.length);
+                        y = tiletable2[x]
+                    }else if (playerCoord.y >= 3201){
+                        x = Math.floor(Math.random() * tiletable2.length);
+                        y = tiletable2[x]
+                    }else if (playerCoord.y <= -1){
+                        x = Math.floor(Math.random() * tiletable1.length);
+                        y = tiletable1[x]
+                    }else{
+                        x = Math.floor(Math.random() * tiletable2.length);
+                        y = tiletable2[x]
+                    }
+                    tilesList.push({"xid": playerCoord.x, "yid": playerCoord.y, "zid": playerCoord.z, "id": y})
+                    //document.getElementById("sideFeed").innerHTML += x
+                }
+                //document.getElementById("sideFeed").innerHTML += "<br><br>"
+        }
+        playerCoord.x = spawnCoord.x
+        playerCoord.y = spawnCoord.y
+    }
+
+    function writeWorldMap(){ //NOTE: For some reason, this is rotated 90 degrees counterclockwise. Fix this if you can.
+        output = "";
+        var worldheight = 32;
+        var worldwidth = 256;
+        for(var row = 0; row < worldheight; row++){
+            world.push([])
+            output += "<div class = 'row'>"
+                for (var col = 0; col < worldwidth; col++){
+                    if(row == 0){ //Northern Glacier Spawn
+                        output += worldDict[0];
+                        world[row].push(0);
+                    }else if(row >= 1 && row <= 2 && col >= 20 && col <= 40){ // Western Continent Spawns
+                        x = [0, 0, 0, 0, 0, 0, 0, 1]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 3 && row <= 5 && col >= 40 && col <= 60){
+                        x = [0, 0, 0, 0, 1]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 6 && row <= 8 && col >= 40 && col <= 60){
+                        x = [0, 0, 1, 1, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 9 && row <= 12 && col >= 40 && col <= 60){
+                        x = [0, 1, 1, 2, 3, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 13 && row <= 17 && col >= 40 && col <= 60){
+                        x = [1, 1, 2, 3, 4, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 18 && row <= 22 && col >= 40 && col <= 60){
+                        x = [1, 1, 1, 2, 3, 4, 5]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 23 && row <= 24 && col >= 40 && col <= 60){
+                        x = [1, 1, 1, 1, 2, 4, 5]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 25 && row <= 27 && col >= 40 && col <= 60){
+                        x = [1, 1, 1, 1, 1, 4, 4, 5, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 28 && row <= 29 && col >= 40 && col <= 60){
+                        x = [1, 1, 4, 4, 5, 6, 6, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row == 30 && col >= 40 && col <= 60){
+                        x = [1, 1, 6, 6, 6, 6, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    
+                    }else if(row >= 1 && row <= 2 && col >= 100 && col <= 140){ // Middle Continent Spawns
+                        world[row].push(0)
+                        output += worldDict[0];
+                    }else if(row >= 3 && row <= 5 && col >= 100 && col <= 140){
+                        x = [0, 0, 0, 0, 1]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 6 && row <= 8 && col >= 100 && col <= 140){
+                        x = [0, 0, 1, 1, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 9 && row <= 12 && col >= 100 && col <= 140){
+                        x = [0, 1, 1, 2, 3, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 13 && row <= 17 && col >= 100 && col <= 140){
+                        x = [1, 1, 2, 2, 3, 3, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 18 && row <= 22 && col >= 100 && col <= 140){
+                        x = [1, 2, 2, 3, 3, 4, 5]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 23 && row <= 24 && col >= 100 && col <= 140){
+                        x = [1, 1, 2, 2, 4, 5, 5, 5]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 25 && row <= 27 && col >= 100 && col <= 140){
+                        x = [1, 1, 2, 4, 5, 5, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 28 && row <= 29 && col >= 100 && col <= 140){
+                        x = [1, 1, 2, 5, 5, 6, 6, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row == 30 && col >= 100 && col <= 140){
+                        x = [1, 5, 6, 6, 6, 6, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+
+                    }else if(row >= 1 && row <= 2 && col >= 190 && col <= 230){ // Eastern Continent Spawns
+                        world[row].push(0)
+                        output += worldDict[0];
+                    }else if(row >= 3 && row <= 5 && col >= 190 && col <= 230){
+                        x = [0, 0, 1]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 6 && row <= 8 && col >= 190 && col <= 230){
+                        x = [0, 0, 0, 0, 1, 1, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 9 && row <= 12 && col >= 190 && col <= 230){
+                        x = [0, 1, 1, 2, 3, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 13 && row <= 17 && col >= 190 && col <= 230){
+                        x = [1, 1, 1, 2, 3, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 18 && row <= 22 && col >= 190 && col <= 230){
+                        x = [1, 1, 2, 2, 3, 3, 4, 5]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 23 && row <= 24 && col >= 190 && col <= 230){
+                        x = [1, 1, 2, 2, 4, 4, 5]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 25 && row <= 27 && col >= 190 && col <= 230){
+                        x = [1, 1, 1, 2, 4, 5, 5, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 28 && row <= 29 && col >= 190 && col <= 230){
+                        x = [1, 1, 2, 2, 5, 5, 5, 6, 6, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row == 30 && col >= 190 && col <= 230){
+                        x = [1, 5, 6, 6, 6, 6, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    
+                    }else if(row >= 1 && row <= 2){ // Ocean Spawns
+                        x = [0, 0, 0, 0, 0, 1]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 3 && row <= 5){
+                        x = [0, 0, 1]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 6 && row <= 8){
+                        x = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 9 && row <= 12){
+                        x = [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 13 && row <= 17){
+                        x = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 4]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 18 && row <= 22){
+                        x = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 4, 5]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 23 && row <= 24){
+                        x = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 5]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 25 && row <= 27){
+                        x = [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 5, 5, 6, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row >= 28 && row <= 29){
+                        x = [1, 1, 1, 1, 1, 1, 1, 1, 2, 5, 5, 6, 6, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row == 30){
+                        x = [1, 1, 1, 5, 6, 6, 6, 6, 6]
+                        y = Math.floor(Math.random()*x.length)
+                        world[row].push(x[y])
+                        output += worldDict[world[row][col]];
+                    }else if(row == 31){
+                        world[row].push(6)
+                        output += worldDict[6];
+                    }else{
+                        world[row].push(0);
+                        output += worldDict[0];
+                    }
+                }
+        }
+    document.getElementById('sideFeed').innerHTML = output;
+    }
+
+    // - TILE GENERATORS & RECALLERS -
+    function checkRoom(){
+        x = tilesList.find(searchCoords)
+        if (x == undefined) { //Checks if there is an object in the current coords. If not, it creates a new one.
+            roomGen()
+        }
+    }
+    function printRoom(){
+        var x = tilesList.find(searchCoords) //Retrieves space by coords.
+        var y = tileIDs.find(y => y.id === x.id)
+        document.getElementById("area").innerHTML = biome.cur; // Prints biome name.
+        document.getElementById("feed").innerHTML += "<br><br>" + y.desc // Print room desc.
+        writeMap()
+    }
+    function roomGen(){
+        if (biome.cur == "Glacier"){
+            x = Math.floor(Math.random() * tiletable2.length);
+            y = tiletable2[x]
+        }else if (biome.cur == "Ocean"){
+            x = Math.floor(Math.random() * tiletable2.length);
+            y = tiletable2[x]
+        }else if (biome.cur == "Plains"){
+            x = Math.floor(Math.random() * tiletable1.length);
+            y = tiletable1[x]
+        }else if (biome.cur == "Forest"){
+            x = Math.floor(Math.random() * tiletable1.length);
+            y = tiletable1[x]
+        }else if (biome.cur == "Mountains"){
+            x = Math.floor(Math.random() * tiletable2.length);
+            y = tiletable2[x]
+        }else if (biome.cur == "Desert"){
+            x = Math.floor(Math.random() * tiletable1.length);
+            y = tiletable1[x]
+        }else if (biome.cur == "Sun-Scorned Wastes"){
+            x = Math.floor(Math.random() * tiletable1.length);
+            y = tiletable1[x]
+        }else if (biome.cur == "Nowhere"){
+            x = Math.floor(Math.random() * tiletable2.length);
+            y = tiletable2[x]
+        }else if (coord.y >= 3201){
+            x = Math.floor(Math.random() * tiletable2.length);
+            y = tiletable2[x]
+        }else if (coord.y <= -1){
+            x = Math.floor(Math.random() * tiletable1.length);
+            y = tiletable1[x]
+        }else{ //NOTE: Add tilelists for y-levels above and below biome max.
+            x = Math.floor(Math.random() * tiletable2.length);
+            y = tiletable2[x]
+        }
+        tilesList.push({"xid": coord.x, "yid": coord.y, "zid": coord.z, "id": y})
+    }
+
+    function searchCoords(x){ //Checks if a room with the current coords exists.
+        if (x.xid == coord.x){
+            if (x.yid == coord.y){
+                if (x.zid == coord.z){
+                    return x
+                }
+            }
+        }
+    }
+
+    function structureGen(){ //Pregenerates structures.
+        var structureSeeker = 0
+        var x = structureList[structureSeeker]
+        var z = structureList.length
+        while (structureSeeker != z){
+            coord.x = Math.floor((Math.random() * (x.variance * 2)) - x.variance + x.xid) //Randomizes x & y positions based on the variance value of the structure.
+            coord.y = Math.floor((Math.random() * (x.variance * 2)) - x.variance + x.yid)
+            var structureBuilder = 0
+            y = structureBP[structureSeeker].length
+            while (structureBuilder != y){
+                a = coord.x + structureBP[structureSeeker][structureBuilder][0]
+                b = coord.y + structureBP[structureSeeker][structureBuilder][1]
+                c = coord.z + structureBP[structureSeeker][structureBuilder][2]
+                if(a<=-1){
+                    a = a + worldsize.x
+                }else if(a >= worldsize.x){
+                    a = a - worldsize.x
+                }
+                tilesList.push({"xid": a, "yid": b, "zid": c, "id": structureBP[structureSeeker][structureBuilder][3]})
+                structureBuilder = structureBuilder + 1
+            }
+            structureSeeker = structureSeeker + 1
+            x = structureList[structureSeeker]
+        }
+        coord.x = spawnCoord.x
+        coord.y = spawnCoord.y
+        coord.z = spawnCoord.z
+    }
+
+    // - TILES LIST - 
+    const tilesList = [
+        {
+        "xid": 0,
+        "yid": 0,
+        "zid": 0,
+        "id": "core_spawnslab",
+        }
+    ]
+
+    // - NUMBER GENERATORS - 
+    function roll1d4(){
+        diceroll = Math.floor(Math.random() * 4);
+    }
+    function roll1d6(){
+        diceroll = Math.floor(Math.random() * 6);
+    }
+    function roll1d8(){
+        diceroll = Math.floor(Math.random() * 8);
+    }
+    function roll1d10(){
+        diceroll = Math.floor(Math.random() * 10);
+    }
+    function roll1d12(){
+        diceroll = Math.floor(Math.random() * 12);
+    }
+    function roll1d20(){
+        diceroll = Math.floor(Math.random() * 20);
+    }
+    function rolld100(){
+        diceroll = Math.floor(Math.random() * 100);
+    }
+
+    // - LIST SELECTORS - 
+
+    // - LISTS -
+    const loottableDebug1 = [
+        { //IMPROMPTU STYLE GUIDE. First: when referencing these, use x.name, ALWAYS, or you will probably get an error.
+            "name": "Apple1", //Name. Used for obvious things.
+            "an": " an " //A or An. Used to make names flow easier.
+        },
+        {
+            "name": "Apple2",
+            "an": " an "
+        },
+        {
+            "name": "Apple3",
+            "an": " an "
+        },
+        {
+            "name": "Lemon",
+            "an": " a "
+        },
+        {
+            "name": "Grape",
+            "an": " a "
+        },
+        {
+            "name": "Orange",
+            "an": " an "
+        }
+    ]
+    const tiletable1 = ["core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass2", "core_grass3", "core_pinetree1", "core_pinetree2", "core_boulder1"]
+    const tiletable2 = ["core_snow1", "core_snow2", "core_grass3", "core_grass3", "core_grass3", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_grass1", "core_pinetree1", "core_pinetree2", "core_boulder1"]
+        
+
+    // - STRUCTURE CORE LIST -
+    const structureList = [
+        { 
+            "id": 0, //Northeast Debug Tower
+            "xid": 50,
+            "yid": 50,
+            "zid": 0,
+            "variance": 10,
+        },
+        { 
+            "id": 1, //Northwest Debug Pit
+            "xid": -50,
+            "yid": 50,
+            "zid": 0,
+            "variance": 10,
+        },
+        { 
+            "id": 2, //Southeast Debug Rock Pile
+            "xid": 50,
+            "yid": -50,
+            "zid": 0,
+            "variance": 10,
+        },
+        { 
+            "id": 3, //Southwest Debug Sculpture
+            "xid": -50,
+            "yid": -50,
+            "zid": 0,
+            "variance": 10,
+        },
+        { 
+            "id": 4, //Spawn Circle
+            "xid": 0,
+            "yid": 0,
+            "zid": 0,
+            "variance": 0,
+        }
+    ]
+    // - STRUCTURE BLUEPRINT LISTS -
+    const structureBP = [
+        [ // Northeast Debug Tower
+            [0, -3, 0, "core_door1"], //0 is xid, 1 is yid, 2 is zid, 3 is id.
+            [1, -3, 0, "core_stonewall1"],
+            [-1, -3, 0, "core_stonewall1"],
+            [-2, -2, 0, "core_stonewall1"],
+            [2, -2, 0, "core_stonewall1"],
+            [-3, -1, 0, "core_stonewall1"],
+            [3, -1, 0, "core_stonewall1"],
+            [-3, 0, 0, "core_stonewall1"],
+            [3, 0, 0, "core_stonewall1"],
+            [-3, 1, 0, "core_stonewall1"],
+            [3, 1, 0, "core_stonewall1"],
+            [-2, 2, 0, "core_stonewall1"],
+            [2, 2, 0, "core_stonewall1"],
+            [-1, 3, 0, "core_stonewall1"],
+            [0, 3, 0, "core_stonewall1"],
+            [1, 3, 0, "core_stonewall1"],
+        ],
+        [ // Northwest Debug Pit TODO
+            [0, -3, 0, "core_door1"],
+            [1, -3, 0, "core_stonewall1"],
+            [-1, -3, 0, "core_stonewall1"],
+            [-2, -2, 0, "core_stonewall1"],
+            [2, -2, 0, "core_stonewall1"],
+            [-3, -1, 0, "core_stonewall1"],
+            [3, -1, 0, "core_stonewall1"],
+            [-3, 0, 0, "core_stonewall1"],
+            [3, 0, 0, "core_stonewall1"],
+            [-3, 1, 0, "core_stonewall1"],
+            [3, 1, 0, "core_stonewall1"],
+            [-2, 2, 0, "core_stonewall1"],
+            [2, 2, 0, "core_stonewall1"],
+            [-1, 3, 0, "core_stonewall1"],
+            [0, 3, 0, "core_stonewall1"],
+            [1, 3, 0, "core_stonewall1"],
+        ],
+        [ // Southeast Debug Rock Pile TODO
+            [0, -3, 0, "core_door1"],
+            [1, -3, 0, "core_stonewall1"],
+            [-1, -3, 0, "core_stonewall1"],
+            [-2, -2, 0, "core_stonewall1"],
+            [2, -2, 0, "core_stonewall1"],
+            [-3, -1, 0, "core_stonewall1"],
+            [3, -1, 0, "core_stonewall1"],
+            [-3, 0, 0, "core_stonewall1"],
+            [3, 0, 0, "core_stonewall1"],
+            [-3, 1, 0, "core_stonewall1"],
+            [3, 1, 0, "core_stonewall1"],
+            [-2, 2, 0, "core_stonewall1"],
+            [2, 2, 0, "core_stonewall1"],
+            [-1, 3, 0, "core_stonewall1"],
+            [0, 3, 0, "core_stonewall1"],
+            [1, 3, 0, "core_stonewall1"],
+        ],
+        [ // Southwest Debug Sculpture TODO
+            [0, -3, 0, "core_door1"],
+            [1, -3, 0, "core_stonewall1"],
+            [-1, -3, 0, "core_stonewall1"],
+            [-2, -2, 0, "core_stonewall1"],
+            [2, -2, 0, "core_stonewall1"],
+            [-3, -1, 0, "core_stonewall1"],
+            [3, -1, 0, "core_stonewall1"],
+            [-3, 0, 0, "core_stonewall1"],
+            [3, 0, 0, "core_stonewall1"],
+            [-3, 1, 0, "core_stonewall1"],
+            [3, 1, 0, "core_stonewall1"],
+            [-2, 2, 0, "core_stonewall1"],
+            [2, 2, 0, "core_stonewall1"],
+            [-1, 3, 0, "core_stonewall1"],
+            [0, 3, 0, "core_stonewall1"],
+            [1, 3, 0, "core_stonewall1"],
+        ],
+        [ // Center Circle
+            [1, 7, 0, "core_centerpillar"],
+            [-1, 7, 0, "core_centerpillar"],
+            [4, 6, 0, "core_centerpillar"],
+            [-4, 6, 0, "core_centerpillar"],
+            [6, 4, 0, "core_centerpillar"],
+            [-6, 4, 0, "core_centerpillar"],
+            [7, 1, 0, "core_centerpillar"],
+            [-7, 1, 0, "core_centerpillar"],
+            [7, -1, 0, "core_centerpillar"],
+            [-7, -1, 0, "core_centerpillar"],
+            [6, -4, 0, "core_centerpillar"],
+            [-6, -4, 0, "core_centerpillar"],
+            [4, -6, 0, "core_centerpillar"],
+            [-4, -6, 0, "core_centerpillar"],
+            [1, -7, 0, "core_centerpillar"],
+            [-1, -7, 0, "core_centerpillar"],
+        ],
+    ]
+    
+    // - ITEM ID LIST - 
+        // TODO
+    
+    // - TILE ID LIST - 
+    const tileIDs = [
+        { //ROOM STYLE GUIDE
+            "id": "core_grass1",
+            "name": "Grass",
+            "desc": "A thin patch of grass.",
+            "symbol": ".",
+            "color": 0,
+            "wall": 0,
+            "stair": 0,
+        },
+        { 
+            "id": "core_grass2",
+            "name": "Grass",
+            "desc": "A patch of grass.",
+            "symbol": ",",
+            "color": 0,
+            "wall": 0,
+            "stair": 0,
+        },
+        { 
+            "id": "core_grass3",
+            "name": "Grass",
+            "desc": "A patch of wilting grass.",
+            "symbol": ".",
+            "color": 0,
+            "wall": 0,
+            "stair": 0,
+        },
+        {
+            "id": "core_snow1",
+            "name": "Snow",
+            "desc": "A patch of snow.",
+            "symbol": "~",
+            "color": 3,
+            "wall": 0,
+            "stair": 0,
+        },
+        { 
+            "id": "core_snow2",
+            "name": "Frost",
+            "desc": "Some frozen ground.",
+            "symbol": "-",
+            "color": 2,
+            "wall": 0,
+            "stair": 0,
+        },
+        {
+            "id": "core_pinetree1",
+            "name": "Tree",
+            "desc": "A pine tree of respectable size.",
+            "symbol": "^",
+            "color": 2,
+            "wall": 1,
+            "stair": 0,
+        },
+        {
+            "id": "core_pinetree2",
+            "name": "Tree",
+            "desc": "A large pine tree.",
+            "symbol": "^",
+            "color": 2,
+            "wall": 1,
+            "stair": 0,
+        },
+        {
+            "id": "core_boulder1",
+            "name": "Boulder",
+            "desc": "A big-ass rock. Makes for good climbing.",
+            "symbol": "O",
+            "color": 1,
+            "wall": 1,
+            "stair": 0,
+        },
+        {
+            "id": "core_stonewall1",
+            "name": "Stone Wall",
+            "desc": "Cobblestones piled together into a sturdy wall",
+            "symbol": "=",
+            "color": 3,
+            "wall": 1,
+            "stair": 0,
+        },
+        {
+            "id": "core_door1",
+            "name": "Door",
+            "desc": "An old wooden door. It is open.",
+            "symbol": "D",
+            "color": 1,
+            "wall": 0,
+            "stair": 0,
+        },
+        {
+            "id": "core_centerpillar",
+            "name": "Stone Pillar",
+            "desc": "A rough stone pillar, engraved with a sigil.",
+            "symbol": "$",
+            "color": 3,
+            "wall": 1,
+            "stair": 0,
+        },
+        {
+            "id": "core_spawnslab",
+            "name": "Stone Slab",
+            "desc": "A cold, clean slab of cut grey stone.",
+            "symbol": "O",
+            "color": 2,
+            "wall": 0,
+            "stair": 0,
+        },
+    ]
+</script>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>sup nerds</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                background: black;
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <br>
+        <a href="Core.html">space thingy</a><br>
+        <a href="innawoods.html">innawoods</a><br>
+        <a href="bio.html">bio</a><br>
+        <a href="https://www.eelslap.com">Eel Slap (very important)</a><br>
+    </body>
+    <br><p id="clockrl">timer broke.</p>
+</html>
+<script>
+    function rlclock(){
+        const today = new Date();
+        document.getElementById('clockrl').innerHTML = today
+        setTimeout(rlclock, 1000);
+    }
+    rlclock()
+</script>

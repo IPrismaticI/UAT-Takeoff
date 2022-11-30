@@ -54,7 +54,9 @@
             idStorage = prompt("User ID: ")
             y.innerHTML += "Request ID<br>"
         }while(idStorage.length != 3) //Checks ID length to make sure it equals 8. If it isnt, it asks again.
-        namefeed.innerHTML = "Name : " + nameStorageFirst + " " + nameStorageLast + "<br>User ID : " + idStorage
+        document.getElementById("identifier").innerHTML = idStorage
+        document.getElementById("username").innerHTML = nameStorageFirst + " " + nameStorageLast
+        //namefeed.innerHTML = "Name : " + nameStorageFirst + " " + nameStorageLast + "<br>User ID : " + idStorage
     }
 
     function runtimer (x,y){ //Begins clock.
@@ -66,12 +68,12 @@
             intervalIDs[i] = setTimeout(function(){
                 if (currTime <= 30) {
                     currTime = currTime - 5
-                    x.innerHTML = "WARNING : " + currTime + " seconds till Launch."
+                    x.innerHTML = "Countdown: " + "WARNING : " + currTime + " seconds till Launch."
                     y.innerHTML += "currTime less than/equal to 25<br>"
                     y.innerHTML += "currTime Reduced to " + currTime + "<br>"
                 } else {
                     currTime = currTime - 5
-                    x.innerHTML = currTime + " seconds till Launch."
+                    x.innerHTML = "Countdown: " + currTime + " seconds till Launch."
                     y.innerHTML += "currTime greater than 25<br>"
                     y.innerHTML += "currTime Reduced to " + currTime + "<br>"
                 }
@@ -88,26 +90,22 @@
         }
     }
 
-        y.innerHTML += "runtimerActive<br>"
-        for (i = 0; i < 11; i++) { //Loops clock.
-            y.innerHTML += "forActive<br>"
-            setTimeout(function(){
-                if (currTime <= 30) {
-                    currTime = currTime - 5
-                    x.innerHTML = "WARNING : " + currTime + " seconds till Launch."
-                    y.innerHTML += "currTime less than/equal to 25<br>"
-                    y.innerHTML += "currTime Reduced to " + currTime + "<br>"
-                } else {
-                    currTime = currTime - 5
-                    x.innerHTML = currTime + " seconds till Launch."
-                    y.innerHTML += "currTime greater than 25<br>"
-                    y.innerHTML += "currTime Reduced to " + currTime + "<br>"
-                }
-                if (currTime == 0){
-                    alert('Blast Off!!');
-                    y.innerHTML += "LaunchAlert<br>"
-                }
-            }, timeout);
-            timeout = timeout + 1000;
-        }
+    function clock(){ //Gets main time.
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('name').innerHTML = "Time : " + h + ":" + m + ":" + s;
+        setTimeout(clock, 1000);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  //Adds zero in front of numbers < 10
+        return i;
+    }
+    function elapser(){ //Increases timeStorage and tmeElapsed by 1 for each second the page is active.
+        timeStorage = timeStorage + 1
+        document.getElementById('timeElapsed').innerHTML = timeStorage
+        setTimeout(elapser, 1000);
     }
