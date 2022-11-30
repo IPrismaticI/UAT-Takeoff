@@ -2,12 +2,16 @@
         y.innerHTML += "startbutton"
         document.getElementById("btnStart").disabled = true; //Disables start button.
         document.getElementById("btnStop").disabled = false; //Enables stop button.
+        document.getElementById("btnStart").style = "border-color:grey;color:grey"; //Recolors start button.
+        document.getElementById("btnStop").style = "border-color:white;color:white"; //Recolors stop button.
         runtimer(x,y); //Activates runtimer.
     }
     function stopbuttonClick(){
         y.innerHTML += "stopbutton"
         document.getElementById("btnStop").disabled = true; //Disables stop button.
         document.getElementById("btnStart").disabled = false; //Enables start button.
+        document.getElementById("btnStart").style = "border-color:white;color:white"; //Recolors start button.
+        document.getElementById("btnStop").style = "border-color:grey;color:grey"; //Recolors stop button.
         for (i = 0; i < 11; i++){
             clearTimeout(intervalIDs[i]); //Clears intervalIDs, stopping the countdown.
         }
